@@ -1,5 +1,8 @@
 #lang racket
 
+(define (time)
+  (/ (current-inexact-milliseconds) 1000.0))
+
 (define (donut x y z [rad 0.4] [thick 0.3])
   (let* ([xy-d (- (sqrt (+ (sqr x) (sqr y))) rad)]
          [d (sqrt (+ (sqr xy-d) (sqr z)))])
@@ -12,11 +15,10 @@
          [norm (sqrt (+ (sqr n-x) (sqr n-y) (sqr n-z)))])
     (values (/ n-x norm) (/ n-y norm) (/ n-z norm))))
     
-
 (define (sample x y)
   (define (go z i steps)
     (if (>= i steps) #\space
-    (let*-values ([(theta) (* 2 (/ (current-inexact-milliseconds) 1000.0))]
+    (let*-values ([(theta) (* 2 (time))]
                   [(t-x) (- (* x (cos theta)) (* z (sin theta)))]
                   [(t-z)(+ (* x (sin theta)) (* z (cos theta)))]
                   [(d) (donut t-x y t-z)]
