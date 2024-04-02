@@ -45,5 +45,5 @@
   
   (display "\033[2J")
   (display (list->string frame))
-  (sleep (/ 1 120))
+  ; (sleep (/ 1 120))
   (loop))

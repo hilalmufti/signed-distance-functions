@@ -3,7 +3,7 @@ Signed distance functions in 49 lines of Racket.
 
 ## tldr 
 this is a simple racket program that produces the following cool little animation: 
-![](https://github.com/hilalmufti/signed-distance-functions/blob/main/donut.gif)
+![spinning-donut](https://github.com/hilalmufti/signed-distance-functions/blob/main/donut.gif)
 
 ## todos
 - Fill in this readme with more details
